@@ -65,6 +65,7 @@ class TripUpdate(Base):
     # moved from the header, and reformatted as datetime
     timestamp = Column(DateTime)
 
+
     StopTimeUpdates = relationship('StopTimeUpdate', backref='TripUpdate')
 
 
@@ -159,6 +160,7 @@ class VehiclePosition(Base):
 
     # moved from the header, and reformatted as datetime
     timestamp = Column(DateTime)
+    timestamp_now = Column(DateTime)
 
 
 # So one can loop over all classes to clear them for a new load (-o option)
