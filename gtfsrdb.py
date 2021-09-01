@@ -291,7 +291,7 @@ try:
                         occupancy_status=gtfs_realtime_pb2.VehicleDescriptor.OccupancyStatus.DESCRIPTOR.values_by_number[
                             vp.occupancy_status].name,
                         timestamp=timestamp,
-                        timestamp_now=datetime.datetime.now().timestamp())
+                        timestamp_now=datetime.datetime.now())
 
                     session.add(dbvp)
 
