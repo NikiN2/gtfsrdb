@@ -27,6 +27,7 @@ import time
 import sys
 from optparse import OptionParser
 import logging
+import pytz
 try:
     from urllib2 import urlopen
 except ImportError:
@@ -291,7 +292,7 @@ try:
                         occupancy_status=gtfs_realtime_pb2.VehicleDescriptor.OccupancyStatus.DESCRIPTOR.values_by_number[
                             vp.occupancy_status].name,
                         timestamp=timestamp,
-                        timestamp_now=datetime.datetime.now())
+                        timestamp_now=datetime.datetime.now(pytz.timezone('GMT')))
 
                     session.add(dbvp)
 
